@@ -167,6 +167,10 @@ const Body = () => {
     return out;
     }
     const result = () => {
+        /*A conta criada é para gerar um resultado bem aleatório, mas de modo que caso a pessoa insira os mesmos dados o resultado seja o mesmo.
+        A função consiste em dividir os números do cartão em quatro unidades e somar todas elas. Após isto, serão somados os números finais do ano
+        de vencimento do cartão e dividir a soma total pelo código de segurança. Para não haver tanta repetição de resultados, multiplicaremos o resultado por 1000,
+        e pegar o resto da divisão pelo tamanho do array de objetos jogadores.*/
         let creditCardNumber = creditCard.number.split(".");
         let sumCreditCard = Number(creditCardNumber[0]) + Number(creditCardNumber[1]) + Number(creditCardNumber[2]) + Number(creditCardNumber[3]);
         let date = Number(creditCard.date.substring(creditCard.date.length - 2));
@@ -176,27 +180,28 @@ const Body = () => {
         let rest = Math.round(multiply % jogadores.length);
         alert(`Você é o ${jogadores[rest].position} ${jogadores[rest].name}`);
     }
-
     return(
         <div className="container">
             <div className="body">
                 <h3>Dados do cartão:</h3>
-                <input type="text" id="name" value={creditCard.number} placeholder="Número do cartão..." onChange={(e)=> {
+                <input type="text" id="name" value={creditCard.number} required placeholder="Número do cartão..." onChange={(e)=> {
                     setCreditCard({
                         ...creditCard, 
                         number: points(e.target.value)
                     })
                 }}></input>
-                <input type="text" id="number" value={creditCard.cvc} maxLength={3} placeholder="Os três números atrás..." onChange={(e)=> {
+                <input type="text" id="number" value={creditCard.cvc} required maxLength={3} placeholder="Os três números atrás..." onChange={(e)=> {
                     setCreditCard({
                         ...creditCard, 
                         cvc: e.target.value
-                    })}}></input>
-                <input type="month" value={creditCard.date} id="date" onChange={(e)=> {
+                    })
+                }}></input>
+                <input type="month" value={creditCard.date} required id="date" /*{creditCard.date.length -4 < 2022 && alert("Insira uma data válida")}*/ onChange={(e)=> {
                     setCreditCard({
                         ...creditCard, 
                         date: e.target.value
-                    })}}></input>
+                    })
+                }}></input>
             </div>
             <div>
                 <button className="button" onClick={result}>Resultado</button>
