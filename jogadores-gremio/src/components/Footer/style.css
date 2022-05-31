@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 90px;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+}
+@media (min-width: 1000px) {
+    .footer {
+        padding: 50px;
+    }
+}

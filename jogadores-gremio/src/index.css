@@ -1,0 +1,9 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  background-color: #0ea5e9;
+  /* background-image: linear-gradient(to bottom right, #0ea5e9, #e4e4e7); */
+}
