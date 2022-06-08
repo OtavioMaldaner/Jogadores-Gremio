@@ -12,21 +12,25 @@ const Body = () => {
         cvc: '',
         date: ''
     })
-    // localStorage.setItem('theme', 'dark');
-    // localStorage.getItem('theme');
-    // const changeMode = document.getElementById('modeSelector');
-    // const theme = window.localStorage.getItem('theme');
-    // if (theme === 'dark') {
-    //     document.body.classList.add('dark');
-    // }
-    // changeMode?.addEventListener('click', () => {
-    //     document.body.classList.toggle('dark');
-    //     if (theme === 'dark') {
-    //         window.localStorage.setItem('theme', '');
-    //     } else {
-    //         window.localStorage.setItem('theme', 'dark');
-    //     }
-    // });
+
+    const changeModeButton = () => {
+        const changeMode = document.getElementById('modeSelector');
+        const theme = window.localStorage.getItem('theme');
+        // if (theme === 'dark') {
+        //     document.body.classList.add('dark');
+        // }
+        changeMode?.addEventListener('click', () => {
+            //  document.body.classList.toggle('dark');
+            console.log(theme );
+            if (theme === 'dark') {
+                window.localStorage.setItem('theme', '');
+                document.body.classList.remove('dark');            
+            } else {
+                window.localStorage.setItem('theme', 'dark');
+                document.body.classList.add('dark');
+            }
+        });
+    }
     
     const points = (creditCard: string) => {
         creditCard = creditCard.replace(/[^0-9]/g, '');
@@ -91,7 +95,7 @@ const Body = () => {
                 <button className="button" onClick={result}>Resultado</button>
             </div>
             <div className="button-selector">
-                <button className="button-light" id='modeSelector'>Dark/Light mode</button>
+                <button className="button-light" id='modeSelector' onClick={changeModeButton}>Dark/Light mode</button>
             </div>
         </div>
     );
