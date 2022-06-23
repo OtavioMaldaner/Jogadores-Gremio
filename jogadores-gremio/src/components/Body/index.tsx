@@ -68,6 +68,11 @@ const Body = () => {
         let multiply = divide * 1000;
         let rest = Math.round(multiply % Jogadores.length);
         alert(`Você é o ${Jogadores[rest].position} ${Jogadores[rest].name}`);
+        setCreditCard({
+            number: '',
+            cvc: '',
+            date: ''
+        });
     }
     return(
         <div className="container">
