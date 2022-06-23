@@ -96,12 +96,12 @@ const Body = () => {
                         date: e.target.value
                     })
                 }}></input>
-            </div>
-            <div>
-                <button className={darkMode ? "buttonDark" : "button"} onClick={result}>Resultado</button>
-            </div>
-            <div className="button-selector">
-                <button className={darkMode ? "button-dark" : "button-light"} id='modeSelector' onClick={changeModeButton}>Dark/Light mode</button>
+                <div>
+                    <button className={darkMode ? "buttonDark" : "button"} onClick={result}>Resultado</button>
+                </div>
+                <div className="button-selector">
+                    <button className={darkMode ? "button-dark" : "button-light"} id='modeSelector' onClick={changeModeButton}>Dark/Light mode</button>
+                </div>
             </div>
         </div>
     );
