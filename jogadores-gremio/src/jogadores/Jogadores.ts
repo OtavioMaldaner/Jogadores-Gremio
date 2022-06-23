@@ -3,52 +3,121 @@ export type Jogador = {
     position: string;
 }
 export const Jogadores = [{
-    name: "Gabriel Grando",
-    position: "goleiro"
-}, {
     name: "Brenno",
     position: "goleiro"
-}, {
-    name: "Phelipe Megiolaro",
-    position: "goleiro"
-}, {
-    name: "Adriel",
-    position: "goleiro"
-}, {
-    name: "Kannemann",
-    position: "zagueiro"
 }, {
     name: "Geromel",
     position: "zagueiro"
 }, {
-    name: "Bruno Alves",
+    name: "Kannemann",
     position: "zagueiro"
+}, {
+    name: "Thiago Santos",
+    position: "volante"
 }, {
     name: "Diogo Barbosa",
     position: "lateral esquerdo"
 }, {
-    name: "Rodrigues",
-    position: "zagueiro"
+    name: "Jaminton Campaz",
+    position: "meia"
 }, {
-    name: "Nícolas",
-    position: "lateral esquerdo"
+    name: "Martin Benítez",
+    position: "meia"
 }, {
-    name: "Léo Gomes",
-    position: "lateral direito"
+    name: "Elkeson",
+    position: "atacante"
 }, {
-    name: "Edílson",
-    position: "lateral direito"
+    name: "Ferreira",
+    position: "atacante"
+}, {
+    name: "Gabriel Grando",
+    position: "goleiro"
+}, {
+    name: "Pedro Lucas",
+    position: "meia"
 }, {
     name: "Rodrigo Ferreira",
     position: "lateral direito"
 }, {
-    name: "Heitor",
+    name: "Lucas Silva",
+    position: "volante"
+}, {
+    name: "Biel",
+    position: "atacante"
+}, {
+    name: "Elias Manoel",
+    position: "atacante"
+}, {
+    name: "Janderson",
+    position: "atacante"
+}, {
+    name: "Jhonata Robert",
+    position: "atacante"
+}, {
+    name: "Rodrigues",
     position: "zagueiro"
 }, {
-    name: "Gustavo Marins",
+    name: "Mathías Villasanti",
+    position: "volante"
+}, {
+    name: "Diego Souza",
+    position: "atacante"
+}, {
+    name: "Nícolas",
+    position: "lateral esquerdo"
+}, {
+    name: "Adriel",
+    position: "goleiro"
+}, {
+    name: "Edílson",
+    position: "lateral direito"
+}, {
+    name: "Bruno Alves",
     position: "zagueiro"
 }, {
     name: "Natã",
+    position: "zagueiro"
+}, {
+    name: "Kevin",
+    position: "atacante"
+}, {
+    name: "Bitello",
+    position: "meia"
+}, {
+    name: "Felipe Scheibig",
+    position: "goleiro"
+}, {
+    name: "Fernando Henrique",
+    position: "volante"
+}, {
+    name: "Jhonata Varela",
+    position: "volante"
+}, {
+    name: "Matheus Sarará",
+    position: "volante"
+}, {
+    name: "Heitor",
+    position: "zagueiro"
+}, {
+    name: "Michel",
+    position: "volante"
+}, {
+    name: "Thiago Rosa",
+    position: "lateral esquerdo"
+}, {
+    name: "Gabriel Silva",
+    position: "meia"
+}, {
+    name: "Ricardinho",
+    position: "atacante"
+}, {
+    name: "Phelipe Megiolaro",
+    position: "goleiro"
+}, {
+    name: "Léo Gomes",
+    position: "lateral direito"
+}, {
+    name: "Gustavo Marins",
     position: "zagueiro"
 }, {
     name: "Lucas Kawan",
@@ -57,78 +126,15 @@ export const Jogadores = [{
     name: "Cuiabano",
     position: "lateral esquerdo"
 }, {
-    name: "Thiago Rosa",
-    position: "lateral esquerdo"
-}, {
-    name: "Ferreira",
-    position: "atacante"
-}, {
-    name: "Benítez",
-    position: "meia"
-}, {
-    name: "Jaminton Campaz",
-    position: "meia"
-}, {
-    name: "Lucas Silva",
-    position: "volante"
-}, {
-    name: "Mathias Villasanti",
-    position: "volante"
-}, {
-    name: "Janderson",
-    position: "atacante"
-}, {
-    name: "Thiago Santos",
-    position: "volante"
-}, {
-    name: "Pedro Lucas",
-    position: "meia"
-}, {
-    name: "Biel",
-    position: "meia"
-}, {
     name: "Victor Bobsin",
-    position: "volante"
-}, {
-    name: "Bitello",
-    position: "meia"
-}, {
-    name: "Fernando Henrique",
-    position: "volante"
-}, {
-    name: "Michel",
     position: "volante"
 }, {
     name: "Matheus Frizzo",
     position: "volante"
 }, {
-    name: "Matheus Sarará",
-    position: "volante"
-}, {
-    name: "Gabriel Silva",
-    position: "meia"
-}, {
     name: "Ronald",
     position: "volante"
 }, {
-    name: "Jhonata Varela",
+    name: "Lucas Leiva",
     position: "volante"
-}, {
-    name: "Jhonata Robert",
-    position: "atacante"
-}, {
-    name: "Diego Souza",
-    position: "atacante"
-}, {
-    name: "Elkeson",
-    position: "atacante"
-}, {
-    name: "Ricardinho",
-    position: "atacante"
-}, {
-    name: "Elias Manoel",
-    position: "atacante"
-}, {
-    name: "Kevin",
-    position: "atacante"
 }]

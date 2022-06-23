@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 90px;
+    padding-top: 90px;
     flex-direction: column;
     font-family: 'Oswald', sans-serif;
 }

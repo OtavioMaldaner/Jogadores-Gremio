@@ -12,7 +12,7 @@ const Body = () => {
         cvc: '',
         date: ''
     })
-
+    const [darkMode, setDarkMode] = useState(false);
     const changeModeButton = () => {
         const changeMode = document.getElementById('modeSelector');
         const theme = window.localStorage.getItem('theme');
@@ -21,13 +21,14 @@ const Body = () => {
         // }
         changeMode?.addEventListener('click', () => {
             //  document.body.classList.toggle('dark');
-            console.log(theme );
             if (theme === 'dark') {
                 window.localStorage.setItem('theme', '');
-                document.body.classList.remove('dark');            
+                document.body.classList.remove('dark');  
+                setDarkMode(false);          
             } else {
                 window.localStorage.setItem('theme', 'dark');
                 document.body.classList.add('dark');
+                setDarkMode(true);
             }
         });
     }
@@ -84,7 +85,7 @@ const Body = () => {
                         cvc: e.target.value
                     })
                 }}></input>
-                <input type="month" value={creditCard.date} required id="date" /*{creditCard.date.length -4 < 2022 && alert("Insira uma data válida")}*/ onChange={(e)=> {
+                <input type="month" value={creditCard.date} id="date" /*{creditCard.date.length -4 < 2022 && alert("Insira uma data válida")}*/ onChange={(e)=> {
                     setCreditCard({
                         ...creditCard, 
                         date: e.target.value
@@ -92,10 +93,10 @@ const Body = () => {
                 }}></input>
             </div>
             <div>
-                <button className="button" onClick={result}>Resultado</button>
+                <button className={darkMode ? "buttonDark" : "button"} onClick={result}>Resultado</button>
             </div>
             <div className="button-selector">
-                <button className="button-light" id='modeSelector' onClick={changeModeButton}>Dark/Light mode</button>
+                <button className={darkMode ? "button-dark" : "button-light"} id='modeSelector' onClick={changeModeButton}>Dark/Light mode</button>
             </div>
         </div>
     );
