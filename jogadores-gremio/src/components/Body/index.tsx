@@ -12,6 +12,26 @@ const Body = () => {
         cvc: '',
         date: ''
     })
+    const [darkMode, setDarkMode] = useState(false);
+    const changeModeButton = () => {
+        const changeMode = document.getElementById('modeSelector');
+        const theme = window.localStorage.getItem('theme');
+        // if (theme === 'dark') {
+        //     document.body.classList.add('dark');
+        // }
+        changeMode?.addEventListener('click', () => {
+            //  document.body.classList.toggle('dark');
+            if (theme === 'dark') {
+                window.localStorage.setItem('theme', '');
+                document.body.classList.remove('dark');  
+                setDarkMode(false);          
+            } else {
+                window.localStorage.setItem('theme', 'dark');
+                document.body.classList.add('dark');
+                setDarkMode(true);
+            }
+        });
+    }
     
     const points = (creditCard: string) => {
         creditCard = creditCard.replace(/[^0-9]/g, '');
@@ -56,34 +76,32 @@ const Body = () => {
     }
     return(
         <div className="container">
-            <div className='all'>
-                <div className="body">
-                    <h3>Dados do cartão:</h3>
-                    <input type="text" id="name" value={creditCard.number} required placeholder="Número do cartão..." onChange={(e)=> {
-                        setCreditCard({
-                            ...creditCard, 
-                            number: points(e.target.value)
-                        })
-                    }}></input>
-                    <input type="text" id="number" value={creditCard.cvc} required maxLength={3} placeholder="Os três números atrás..." onChange={(e)=> {
-                        setCreditCard({
-                            ...creditCard, 
-                            cvc: e.target.value
-                        })
-                    }}></input>
-                    <input type="month" value={creditCard.date} id="date" onChange={(e)=> {
-                        setCreditCard({
-                            ...creditCard, 
-                            date: e.target.value
-                        })
-                    }}></input>
-                    <div>
-                        <button className="button" onClick={result}>Resultado</button>
-                    </div>
-                    <div className='description'>
-                        
-                    </div>
-            </div>
+            <div className="body">
+                <h3>Dados do cartão:</h3>
+                <input type="text" id="name" value={creditCard.number} required placeholder="Número do cartão..." onChange={(e)=> {
+                    setCreditCard({
+                        ...creditCard, 
+                        number: points(e.target.value)
+                    })
+                }}></input>
+                <input type="text" id="number" value={creditCard.cvc} required maxLength={3} placeholder="Os três números atrás..." onChange={(e)=> {
+                    setCreditCard({
+                        ...creditCard, 
+                        cvc: e.target.value
+                    })
+                }}></input>
+                <input type="month" value={creditCard.date} id="date" /*{creditCard.date.length -4 < 2022 && alert("Insira uma data válida")}*/ onChange={(e)=> {
+                    setCreditCard({
+                        ...creditCard, 
+                        date: e.target.value
+                    })
+                }}></input>
+                <div>
+                    <button className={darkMode ? "buttonDark" : "button"} onClick={result}>Resultado</button>
+                </div>
+                <div className="button-selector">
+                    <button className={darkMode ? "button-dark" : "button-light"} id='modeSelector' onClick={changeModeButton}>Dark/Light mode</button>
+                </div>
             </div>
         </div>
     );
